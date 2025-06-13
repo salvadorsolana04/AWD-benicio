@@ -1,40 +1,116 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 1rem;
-  }
-  
-  nav {
-    justify-content: flex-end;
-    display: flex;
-    font-size: 0.875em;
-    gap: 0.5rem;
-    max-width: 1024px;
-    margin: 0 auto;
-    padding: 1rem;
-  }
-  
-  nav a {
-    display: inline-block;
-  }
-  
-  main {
-    max-width: 1024px;
-    margin: 0 auto;
-  }
-  
-  .notice {
-    color: green;
-  }
-  
-  section.product {
-    display: flex;
-    gap: 1rem;
-    flex-direction: row;
-  }
-  
-  section.product img {
-    border-radius: 8px;
-    flex-basis: 50%;
-    max-width: 50%;
-  }
-  
+/* Navegación superior */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: black;
+  padding: 10px 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.logo-wrapper img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+nav a,
+nav form button {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+nav form button:hover,
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Contenido principal */
+.main-content {
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Catálogo de productos */
+#products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+#products .product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#products .product-card:hover {
+  transform: scale(1.02);
+}
+
+#products .product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+#products .product-card h2 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#products .product-card p {
+  margin-bottom: 10px;
+  color: #666;
+  font-size: 14px;
+}
+
+button,
+.button {
+  background-color: black;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+.button:hover {
+  background-color: #333;
+}

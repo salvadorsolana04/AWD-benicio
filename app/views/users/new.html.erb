@@ -1,0 +1,25 @@
+<h1>Sign up</h1>
+
+<%= form_with model: @user, url: users_path, local: true do |form| %>
+  <% if @user.errors.any? %>
+    <div class="error-messages">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.label :email_address, "Email" %><br>
+  <%= form.email_field :email_address, placeholder: "you@example.com" %><br>
+
+  <%= form.label :password %><br>
+  <%= form.password_field :password, placeholder: "Enter password" %><br>
+
+  <%= form.label :password_confirmation %><br>
+  <%= form.password_field :password_confirmation, placeholder: "Confirm password" %><br>
+
+  <%= form.submit "Create account" %>
+<% end %>
