@@ -1,23 +1,26 @@
 <body>
   <header class="navbar">
     <div class="navbar-content">
-    <div class="logo-wrapper">
-      <%= link_to root_path do %>
+      <div class="logo-wrapper" style="text-align: center;">
         <%= link_to image_tag("ben1cio-logo.png", alt: "Ben1cio", width: 200, height: 200), root_path %>
-      <% end %>
-    </div> 
+      </div>
       <nav>
         <%= link_to "Home", root_path %>
         <%= link_to "Cart", cart_path %>
-        <%= link_to "Login", new_session_path unless authenticated? %>
-        <%= button_to "Logout", session_path, method: :delete if authenticated? %>
-        <%= link_to "Sign Up", new_user_path unless authenticated? %>
-
+        <% if authenticated? %>
+          <%= button_to "Logout", session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Login", new_session_path %>
+          <%= link_to "Sign Up", new_user_path %>
+        <% end %>
       </nav>
     </div>
   </header>
 
   <main class="main-content">
-    <%= yield %>
+    <%# Center content within the main container %>
+    <div style="text-align: center;">
+      <%= yield %>
+    </div>
   </main>
 </body>

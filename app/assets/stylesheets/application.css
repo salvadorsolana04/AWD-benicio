@@ -1,31 +1,48 @@
-/* Navegación superior */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #121212; /* Darker background for a more modern dark aesthetic */
+  color: #d4d4d4; /* Softer text color for better readability */
+  font-family: "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  min-height: 100vh; /* Ensure full-screen height */
+}
+
 .navbar {
   position: sticky;
   top: 0;
-  background: black;
+  background: #1e1e1e; /* Darker navbar for consistency */
   padding: 10px 20px;
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 8px; /* Rounded corners for smoother look */
 }
 
 .navbar-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.logo-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 1200px; /* Center navbar content */
   margin: 0 auto;
 }
 
+.logo-wrapper {
+  display: flex;
+  justify-content: center; /* Center the logo horizontally */
+  align-items: center;
+  margin: 20px auto; /* Add spacing around the logo */
+}
+
 .logo-wrapper img {
-  height: 60px;
-  width: auto;
-  display: block;
+  margin: 0; /* Remove unnecessary top margin */
+  max-width: 100%; /* Ensure the logo scales properly */
+  height: auto; /* Maintain aspect ratio */
 }
 
 .logo {
@@ -34,50 +51,65 @@
   display: block;
 }
 
+nav {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: center; /* Center buttons horizontally */
+  gap: 20px; /* Add spacing between buttons */
+}
+
 nav a,
 nav form button {
-  color: white;
-  margin-left: 20px;
-  text-decoration: none;
+  display: block; /* Make buttons behave like boxes */
+  width: 250px; /* Set a fixed width for consistency */
+  text-align: center; /* Center text inside buttons */
+  padding: 20px; /* Increase padding for larger buttons */
+  font-size: 18px; /* Larger font size */
   font-weight: bold;
-  background: none;
-  border: none;
+  color: #eaeaea; /* Match text color */
+  background: #333; /* Darker background for buttons */
+  border: 2px solid #444; /* Add a border for box-like appearance */
+  border-radius: 8px; /* Rounded corners */
+  text-decoration: none; /* Remove underline from links */
   cursor: pointer;
-  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 nav form button:hover,
 nav a:hover {
-  text-decoration: underline;
+  background-color: #555; /* Lighter hover effect */
+  transform: scale(1.05); /* Slightly larger hover effect */
 }
 
-/* Contenido principal */
 .main-content {
-  padding: 30px 20px;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 40px 20px;
+  background: #1a1a1a; /* Darker background for main content */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
 
-/* Catálogo de productos */
 #products {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Larger cards */
   gap: 30px;
   margin-top: 30px;
 }
 
 #products .product-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 1px solid #444; /* Darker border for consistency */
+  border-radius: 12px; /* Rounded corners */
   overflow: hidden;
-  background: white;
+  background: #2a2a2a; /* Darker card background for consistency */
   text-align: center;
-  transition: transform 0.2s ease-in-out;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
 }
 
 #products .product-card:hover {
-  transform: scale(1.02);
+  transform: scale(1.05); /* Slightly larger hover effect */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
 }
 
 #products .product-card img {
@@ -88,29 +120,31 @@ nav a:hover {
 
 #products .product-card h2 {
   margin: 10px 0 5px;
-  font-size: 16px;
+  font-size: 18px; /* Slightly larger font */
   font-weight: bold;
+  color: #eaeaea; /* Match text color */
 }
 
 #products .product-card p {
   margin-bottom: 10px;
-  color: #666;
+  color: #ccc; /* Softer text color */
   font-size: 14px;
 }
 
 button,
 .button {
-  background-color: black;
-  color: white;
+  background-color: #333; /* Darker button background */
+  color: #eaeaea;
   padding: 10px 16px;
   border: none;
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover,
 .button:hover {
-  background-color: #333;
+  background-color: #555; /* Slightly lighter hover effect */
+  transform: scale(1.05); /* Slightly larger hover effect */
 }
